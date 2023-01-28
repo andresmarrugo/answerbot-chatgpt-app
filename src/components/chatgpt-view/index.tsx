@@ -13,13 +13,12 @@ function ChatGPTView() {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     setIsLoading(true);
-    const response = await ChatGPT.createCompletion({
+    const response = await ChatGPT?.createCompletion({
       model: "text-davinci-003",
       prompt: input + ", la salida debe ser lo mas breve posible y con un maximo de 500 tokens",
       max_tokens: 500
     });
-    console.log(response.data.choices[0].text)
-    setOutput(response.data.choices[0].text as string);
+    setOutput(response?.data.choices[0].text as string);
     setIsLoading(false);
   };
 
