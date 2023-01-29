@@ -8,10 +8,9 @@ class ChatGPT {
 
     public static getInstance() {
         if (!this.instance) {
-            console.log('process.env.OPENAI_API_KEY', process.env.OPENAI_API_KEY)
             const config = new Configuration({
-                apiKey: "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",
-                organization: process.env.OPENAI_ORGANIZATION_ID
+                apiKey: process.env.OPENAI_API_KEY,
+                organization: process.env.OPENAI_ORGANIZATION_ID,
             });
             new ChatGPT(config);
         }
