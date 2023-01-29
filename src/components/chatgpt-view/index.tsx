@@ -29,14 +29,14 @@ function ChatGPTView() {
   }
 
   return (
-    <div className="bg-gray-200 min-h-screen p-6">
-      <div className="flex flex-col">
-        <div className="flex-1">
+    <div className="bg-red-200 w-full min-h-screen p-6">
+      <div className="flex flex-col w-500">
+        <div className="flex-1 ">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label className="block text-gray-700 font-medium mb-2" htmlFor="input2">
-                  Escribe lo que necesitas saber
+              <div className="mb-2">
+                <label className="block text-gray-700 font-medium mb-2 font-color-red" htmlFor="input2">
+                  Cual es tu pregunta?
                 </label>
                 <textarea
                   className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full leading-5"
@@ -48,17 +48,17 @@ function ChatGPTView() {
                   required
                 ></textarea>
               </div>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">
-                {isLoading ? "Espera.." : 'Generar respuesta'}
+              <button className="bg-purple-300 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg">
+                {isLoading ? "Espera un poco.." : 'Obtener respuesta'}
               </button>
             </form>
           </div>
         </div>
         {output && (
           <div className="flex-1 mt-4">
-            <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="bg-green-300 p-4 rounded-lg shadow-md">
               <label className="block text-gray-700 font-medium mb-2">Respuesta</label>
-              <div className="bg-white p-4 rounded-lg" key={output}>{output}</div>
+              <div className="bg-green-100 p-4 rounded-lg" key={output}>{output}</div>
             </div>
           </div>
         )}
